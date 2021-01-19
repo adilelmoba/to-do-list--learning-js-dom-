@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+a { 
+    text-decoration: none;
+}
+
+ul, li {
+    list-style: none;
+}
+
+/****** GLASSMORPHISME ******/
+main {
+    min-height: 100vh;
+    background: #41295a;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right top, #2F0743, #41295a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right top, #2F0743, #41295a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glass {
+    overflow: hidden;
+    position: relative;
+    background: white;
+    min-height: 90vh;
+    width: 50%;
+    background: linear-gradient(to right bottom,
+     rgba(255, 255, 255, .7),
+     rgba(255, 255, 255, .3));
+    border-radius: 2rem;
+    z-index: 2;
+    backdrop-filter: blur(3rem);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.circle1, .circle2 {
+    background: white;
+    background: linear-gradient(to right bottom,
+     rgba(255, 255, 255, .8),
+     rgba(255, 255, 255, .3));
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.circle1 {
+    height: 10rem;
+    width: 10rem;
+    top: 1%;
+    right: 22%;
+    background-color: #eb596e;
+}
+
+.circle2 {
+    height: 18rem;
+    width: 18rem;
+    bottom: 2%;
+    left: 18%;
+    background-color: #f8dc81;
+}
+
+/****** HEADER ******/
+.header {
+    background-color: rgba(255, 255, 255, .6);
+    text-align: center;
+    width: 100%;
+
+    min-height: 10vh;
+}
+
+.banner-title {
+   font-size: 3rem;
+   padding: .5rem;
+   font-weight: 800;
+}
+
+.yes {
+    color: #007965;
+}
+
+.banner-paragraph {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.input-search {
+    font-family: inherit;
+    margin: 1.4rem 0;
+    border: none;
+    padding: .4rem;
+    width: 18rem;
+    transition: all .4s;
+}
+
+.search-icon{
+    background-color: white;
+    padding: .8rem;
+    transform: translateY(-1px);
+    color: #909090;
+}
+
+.input-search:focus {
+    width: 26rem;
+}
+
+
+/****** TODO-List ******/
+#todo-list {
+    margin: 1rem auto;
+    overflow: auto;
+    width: 100%;
+    height: 38rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 2rem 0 2rem 0;
+}
+
+li {
+    background-color: white;
+    width: 50rem;
+    padding: 1.1rem;
+    margin-bottom: 2rem;
+    border-radius: 6px;
+    border-bottom: 3px solid #6930c3;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+    display: flex;
+    justify-content: space-between;
+    transition: all .5s;
+}
+
+li:hover {
+    box-shadow: none;
+    border-bottom: 3px solid #eb596e;
+    cursor: pointer;
+}
+
+.name {
+    font-size: 1.5rem;
+}
+
+.delete {
+    cursor: pointer;
+    font-size: 1.3rem;
+    color:  #eb596e;
+    transition: all .3s;
+}
+
+.delete:hover,
+.delete:focus {
+    color: #6930c3;
+}
+
+/****** ADD TASKS ******/
+#add-task {
+    background-color: rgba(255, 255, 255, .2);
+    width: 100%;
+
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-add {
+    font-family: inherit;
+    margin: 1.4rem 0;
+    border: none;
+    padding: .5rem;
+    width: 18rem;
+    transition: all .4s;
+}
+
+.btn-add {
+    font-family: inherit;
+    background-color: #9b23ea;
+    padding: .5rem;
+    color: white;
+    border: none;
+    margin-left: .3rem;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 4rem;
+    transition: all .2s;
+}
+
+.btn-add:hover {
+    background-color: #7D48A0;
+}
+
+/****** RESPONSIVE ******/
+@media(max-width: 1030px) {
+    main {
+        max-height: 100vh;
+    }
+    .glass {
+        width: 50%;
+        min-height: 10px;
+    }
+
+    li {
+        width: 35rem;
+    }
+}
+
+@media(max-width: 700px) {
+    .glass {
+        width: 68%;
+    }
+
+    li {
+        width: 34rem;
+    }
+}
+
+@media(max-width: 500px) {
+    .glass {
+        width: 68%;
+    }
+
+    li {
+        width: 28rem;
+    }
+}
+
+@media(max-width: 400px) {
+    main {
+        height: 100vh;
+    }
+
+    .glass {
+        width: 90%;
+    }
+
+    li {
+        width: 26rem;
+    }
+}
+

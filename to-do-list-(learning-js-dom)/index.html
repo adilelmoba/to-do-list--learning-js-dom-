@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FOR ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
+    <link rel="shortcut icon" href="check.png">
+    <link rel="apple-touch-icon" sizes="144x144" type="image/x-icon" href="check.png">
+
+    <title>TO DO List | EL MOBACHI Adil</title>
+</head>
+<body>
+    <main>
+        <section class="glass">
+        
+            <header class="header">
+                <div id="page-banner">
+                    <h1 class="banner-title">TO DO List <i class="fas fa-check yes"></i></h1>
+                    <p class="banner-paragraph">List to Do</p>
+
+                    <form id="search-tasks">
+                        <input type="text" placeholder="Search tasks..." class="input-search">
+                        <i class="fas fa-search search-icon"></i>
+                    </form>
+                </div>
+            </header>
+            
+            <div id="todo-list">
+                <ul>
+                    <li>
+                        <span class="name">Go to gym for 45mins 🏋️‍♂️</span>
+                        <span class="delete"><i id="delete" class="fas fa-trash-alt"></i></span>
+                    </li>
+                    <li>
+                        <span class="name">Pick up coffee at Store ☕</span>
+                        <span class="delete"><i id="delete" class="fas fa-trash-alt"></i></span>
+                    </li>
+                    <li>
+                        <span class="name">Read new book for 1 Hour 📕</span>
+                        <span class="delete"><i id="delete" class="fas fa-trash-alt"></i></span>
+                    </li>
+                    <li>
+                        <span class="name">Watch a movie with Family 🎥</span>
+                        <span class="delete"><i id="delete" class="fas fa-trash-alt"></i></span>
+                    </li>
+                    <li>
+                        <span class="name">Write 5 new Ideas 💡</span>
+                        <span class="delete"><i id="delete" class="fas fa-trash-alt"></i></span>
+                    </li>
+                </ul>
+            </div>
+
+            <form id="add-task">
+                <input type="text" id="input-add" placeholder="Add a task..." class="input-add">
+                <button class="btn-add">Add</button>
+            </form>
+
+        </section>
+    </main>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+
+    <script src="app.js"></script>
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".glass"), {
+            max: 15,
+            speed: 600,
+            glare: false,
+            "max-glare": 0.2,
+        });
+    
+    </script>
+</body>
+</html>
