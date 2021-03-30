@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FOR ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    
+    <!-- FOR DRAG -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.13.0/Sortable.min.js"></script>
+
+
+    <link rel="shortcut icon" href="check.png">
+    <link rel="apple-touch-icon" sizes="144x144" type="image/x-icon" href="check.png">
+    <script defer src="app.js"></script>
+
+    <title>TO DO List | EL MOBACHI Adil</title>
+
+</head>
+<body>
+    <main>
+        <div class="outside-text">
+            <h2>“Yesterday you said Tomorrow.”</h2>
+              <h3>― Christian Scott</h3>
+        </div>
+
+        <section class="glass">
+        
+            <header class="header">
+                <div id="page-banner">
+                    <h1 class="banner-title">TO DO List <i class="fas fa-check yes"></i></h1>
+                    <p class="banner-paragraph">Daily TO DO List 📜</p>
+                    <div class="reminder hidden">
+                        <label class="hour" for="hour">Notification reminder every: </label><select class="select" name="hour" id="hour">
+                            <option value="60">1 hours</option>
+                            <option value="180">3 hours</option>
+                            <option value="300">5 hours</option>
+                        </select>
+                    </div>
+
+                    <form id="search-tasks">
+                        <input type="text" placeholder="Search tasks..." class="input-search">
+                        <i class="fas fa-search search-icon"></i>
+                    </form>
+                </div>
+            </header>
+
+            
+            <div id="todo-list">
+                    <ul class="ulTasks">
+                        <li> 
+                            <!-- <input type="text" class="date"> -->
+                            <span class="name">Go to gym for 45mins 🏋️‍♂️</span> 
+                            <span class="delete"><i id="delete" class="fas fa-check-square"></i></span>
+                        </li>
+                        <li>
+                            <span class="name">Pick up coffee at Store ☕</span> 
+                            <span class="delete"><i id="delete" class="fas fa-check-square"></i></span>
+                        </li>
+                        <li>
+                            <span class="name">Read new book for 1 Hour 📕</span>
+                            <span class="delete"><i id="delete" class="fas fa-check-square"></i></span>
+                        </li>
+                        <li> 
+                            <span class="name">Watch a movie with Family 🎥</span>
+                            <span class="delete"><i id="delete" class="fas fa-check-square"></i></span>
+                        </li>
+                        <li>
+                            <span class="name">Write 5 new Ideas 💡</span>
+                            <span class="delete"><i id="delete" class="fas fa-check-square"></i></span>
+                        </li>
+                    </ul>
+                    <p class="switchedText">let's achieve some goals! ⚡</p>
+            </div>
+
+           <footer class="footer"> 
+               <button class="footer__btn clear-all" id="clear-all">Clear <i class="fas fa-broom icono"></i></button>
+                <form id="add-task">
+                    <input autocomplete="off" type="text" id="input-add" placeholder="Add a task..." class="input-add">
+                    <button class="btn-add">Add</button>
+                </form>
+                <button class="footer__btn save-all" id="save-all">Save <i class="fas fa-save icono"></i></button>
+            </footer>
+
+
+        </section>
+
+    </main>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script src="confetti.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".glass"), {
+            max: 15,
+            speed: 800,
+            glare: false,
+            "max-glare": 0.2,
+        });
+        const dragArea = document.querySelector('.ulTasks');
+        new Sortable(dragArea, {
+            animation: 350
+        });
+    </script>
+</body>
+</html>
